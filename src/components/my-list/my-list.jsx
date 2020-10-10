@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const MyList = () => {
   return (<React.Fragment>
     <div className="user-page">

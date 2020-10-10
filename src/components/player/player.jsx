@@ -20,7 +20,7 @@ const Player = () => {
         <div className="player__controls-row">
           <button type="button" className="player__play">
             <svg viewBox="0 0 19 19" width="19" height="19">
-              <use xlinkhref="#play-s"></use>
+              <use xlinkHref="#play-s"></use>
             </svg>
             <span>Play</span>
           </button>
@@ -28,7 +28,7 @@ const Player = () => {
 
           <button type="button" className="player__full-screen">
             <svg viewBox="0 0 27 27" width="27" height="27">
-              <use xlinkhref="#full-screen"></use>
+              <use xlinkHref="#full-screen"></use>
             </svg>
             <span>Full screen</span>
           </button>
