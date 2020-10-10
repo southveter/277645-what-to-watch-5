@@ -5,7 +5,7 @@ import films from "./mocks/films";
 
 ReactDOM.render(
     <App
-      films={films} 
-      />,
+      films={films}
+    />,
     document.querySelector(`#root`)
 );

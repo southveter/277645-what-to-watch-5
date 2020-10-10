@@ -25,13 +25,13 @@ const App = (props) => {
           <MyList />
         </Route>
         <Route exact path="/films/:id">
-          <Film 
-          films={films}
+          <Film
+            films={films}
           />
         </Route>
         <Route exact path="/films/:id/review">
-          <AddReview 
-          films={films}
+          <AddReview
+            films={films}
           />
         </Route>
         <Route exact path="/player/:id">
@@ -47,6 +47,7 @@ App.propTypes = {
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
+    imgPoster: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     overview: PropTypes.shape({

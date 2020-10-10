@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Player = () => {
   return (<React.Fragment>
     <div className="player">

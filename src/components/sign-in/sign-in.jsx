@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const SignIn = () => {
   return (<React.Fragment>
     <div className="user-page">

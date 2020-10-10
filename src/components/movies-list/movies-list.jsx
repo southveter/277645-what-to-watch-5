@@ -6,10 +6,10 @@ class MoviesList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-        activeCard: null
-      };
+      activeCard: null
+    };
 
-this.handleCardHover = this.handleCardHover.bind(this);
+    this.handleCardHover = this.handleCardHover.bind(this);
 
   }
 
@@ -20,14 +20,14 @@ this.handleCardHover = this.handleCardHover.bind(this);
   render() {
     const {films} = this.props;
     return (
-        <div className="catalog__movies-list">
+      <div className="catalog__movies-list">
         {films.map((film, i) => (
           <MovieCard
             key={`${i}-${film.title}`}
             film={film}
-            handleCardHover = {this.handleCardHover}
+            handleCardHover={this.handleCardHover}
           />
-          ))}
+        ))}
       </div>
     );
   }
@@ -38,6 +38,7 @@ MoviesList.propTypes = {
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
+    imgPoster: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     overview: PropTypes.shape({

@@ -99,8 +99,8 @@ const Main = (props) => {
         </ul>
 
         <MoviesList
-            films={films}
-          />
+          films={films}
+        />
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
@@ -129,6 +129,7 @@ Main.propTypes = {
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
+    imgPoster: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     overview: PropTypes.shape({

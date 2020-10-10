@@ -9,7 +9,7 @@ const AddReview = (props) => {
     <section className="movie-card movie-card--full">
       <div className="movie-card__header">
         <div className="movie-card__bg">
-        <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+          <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -47,7 +47,7 @@ const AddReview = (props) => {
       </div>
 
       <div className="add-review">
-      <AddComment />
+        <AddComment />
       </div>
 
     </section>
@@ -61,6 +61,7 @@ AddReview.propTypes = {
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
+    imgPoster: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     overview: PropTypes.shape({

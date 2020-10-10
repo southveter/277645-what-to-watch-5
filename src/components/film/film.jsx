@@ -9,7 +9,7 @@ const Film = (props) => {
     <section className="movie-card movie-card--full">
       <div className="movie-card__hero">
         <div className="movie-card__bg">
-        <img src={film.imgPreview} alt={film.title} />
+          <img src={film.imgPreview} alt={film.title} />
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -164,6 +164,7 @@ Film.propTypes = {
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
+    imgPoster: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     overview: PropTypes.shape({

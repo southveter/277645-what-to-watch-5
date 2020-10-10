@@ -1,36 +1,35 @@
 import React, {PureComponent} from "react";
-import PropTypes from "prop-types";
 
 class AddComment extends React.PureComponent {
-    constructor (props) {
-        super(props);
-        this.state = {
-            star1: '',
-            star2: '',
-            star3: '',
-            star4: '',
-            star5: '',
-            reviewtext: '',
-          }
+  constructor(props) {
+    super(props);
+    this.state = {
+      star1: ``,
+      star2: ``,
+      star3: ``,
+      star4: ``,
+      star5: ``,
+      reviewtext: ``,
+    };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleFieldChange = this.handleFieldChange.bind(this);
-      }
-      
-      handleSubmit(evt) {
-        evt.preventDefault();
-      }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFieldChange = this.handleFieldChange.bind(this);
+  }
 
-      handleFieldChange(evt) {
-        const {id, value} = evt.target;
-        this.setState({[id]: value});
-      }
+  handleSubmit(evt) {
+    evt.preventDefault();
+  }
 
-    render() {
-      return <form onSubmit={this.handleSubmit} action="#" className="add-review__form">
+  handleFieldChange(evt) {
+    const {id, value} = evt.target;
+    this.setState({[id]: value});
+  }
+
+  render() {
+    return <form onSubmit={this.handleSubmit} action="#" className="add-review__form">
       <div className="rating">
         <div className="rating__stars">
-          <input onChange={this.handleFieldChange} className="rating__input" id="star1" type="radio" name="rating" value="1"/>
+          <input onChange={this.handleFieldChange} className="rating__input" id="star1" type="radio" name="rating" value="1" />
           <label className="rating__label" htmlFor="star1">Rating 1</label>
 
           <input onChange={this.handleFieldChange} className="rating__input" id="star2" type="radio" name="rating" value="2" />
@@ -54,8 +53,8 @@ class AddComment extends React.PureComponent {
         </div>
 
       </div>
-    </form>
-    }
+    </form>;
   }
+}
 
-  export default AddComment;
+export default AddComment;
