@@ -1,48 +1,39 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-import Main from "../main/main";
-import SignIn from "../sign-in/sign-in";
-import MyList from "../my-list/my-list";
-import Film from "../film/film";
-import AddReview from "../add-review/add-review";
-import Player from "../player/player";
+import MovieCard from "../movie-card/movie-card";
 
-const App = (props) => {
-  const {films} = props;
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Main
-            films={films}
-          />
-        </Route>
-        <Route exact path="/login">
-          <SignIn />
-        </Route>
-        <Route exact path="/mylist">
-          <MyList />
-        </Route>
-        <Route exact path="/films/:id">
-          <Film
-            films={films}
-          />
-        </Route>
-        <Route exact path="/films/:id/review">
-          <AddReview
-            films={films}
-          />
-        </Route>
-        <Route exact path="/player/:id">
-          <Player />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
-};
+class MoviesList extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeCard: null
+    };
 
-App.propTypes = {
+    this.handleCardHover = this.handleCardHover.bind(this);
+
+  }
+
+  handleCardHover(film) {
+    this.setState({activeCard: film});
+  }
+
+  render() {
+    const {films} = this.props;
+    return (
+      <div className="catalog__movies-list">
+        {films.map((film, i) => (
+          <MovieCard
+            key={`${i}-${film.title}`}
+            film={film}
+            handleCardHover={this.handleCardHover}
+          />
+        ))}
+      </div>
+    );
+  }
+}
+
+MoviesList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
@@ -74,4 +65,4 @@ App.propTypes = {
   })).isRequired,
 };
 
-export default App;
+export default MoviesList;
