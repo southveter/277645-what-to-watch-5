@@ -3,7 +3,7 @@ export default [
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    imgPoster: `img/the-grand-budapest-hotel-poster.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
@@ -62,6 +62,7 @@ export default [
     title: `Bohemian Rhapsody`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/bohemian-rhapsody.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
@@ -120,6 +121,7 @@ export default [
     title: `Macbeth`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/macbeth.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
@@ -178,6 +180,7 @@ export default [
     title: `Aviator`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/aviator.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
@@ -236,6 +239,7 @@ export default [
     title: `We need to talk about Kevin`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/we-need-to-talk-about-kevin.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
@@ -294,6 +298,7 @@ export default [
     title: `What We Do in the Shadows`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/what-we-do-in-the-shadows.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
@@ -352,6 +357,7 @@ export default [
     title: `Revenant`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/revenant.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
@@ -410,6 +416,7 @@ export default [
     title: `Johnny English`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/johnny-english.jpg`,
+    imgPoster: `img/bohemian-rhapsody.jpg`,
     genre: `Drama`,
     year: `2014`,
     overview: {
