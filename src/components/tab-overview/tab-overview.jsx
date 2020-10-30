@@ -1,48 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-import Main from "../main/main";
-import SignIn from "../sign-in/sign-in";
-import MyList from "../my-list/my-list";
-import Film from "../film/film";
-import AddReview from "../add-review/add-review";
-import Player from "../player/player";
 
-const App = (props) => {
+const TabOverview = (props) => {
   const {films} = props;
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Main
-            films={films}
-          />
-        </Route>
-        <Route exact path="/login">
-          <SignIn />
-        </Route>
-        <Route exact path="/mylist">
-          <MyList />
-        </Route>
-        <Route exact path="/films/:id">
-          <Film
-            films={films}
-          />
-        </Route>
-        <Route exact path="/films/:id/review">
-          <AddReview
-            films={films}
-          />
-        </Route>
-        <Route exact path="/player/:id">
-          <Player />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
+  const film = films[0];
+  const {overview} = film;
+
+  return <React.Fragment>
+    <div className="movie-rating">
+      <div className="movie-rating__score">{overview.ratingScore}</div>
+      <p className="movie-rating__meta">
+        <span className="movie-rating__level">{overview.ratingLevel}</span>
+        <span className="movie-rating__count">{overview.ratingCount}</span>
+      </p>
+    </div>
+
+    <div className="movie-card__text">
+      {overview.description}
+      <p className="movie-card__director"><strong>Director: {overview.director}</strong></p>
+
+      <p className="movie-card__starring"><strong>Starring: {overview.starring}</strong></p>
+    </div>
+  </React.Fragment>;
 };
 
-App.propTypes = {
+export default TabOverview;
+
+TabOverview.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
@@ -73,5 +57,3 @@ App.propTypes = {
     })).isRequired,
   })).isRequired,
 };
-
-export default App;

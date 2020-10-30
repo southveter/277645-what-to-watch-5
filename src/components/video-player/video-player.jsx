@@ -8,7 +8,6 @@ export default class VideoPlayer extends PureComponent {
     this._videoRef = createRef();
 
     this.state = {
-      isPlaying: props.isPlaying,
       isMuting: false,
     };
   }
@@ -22,17 +21,10 @@ export default class VideoPlayer extends PureComponent {
     video.muted = this.setState({isMuting: true});
 
     video.poster = poster;
-
-    video.onplay = () => {
-      this.setState({
-        isPlaying: true,
-      });
-    };
   }
 
   componentWillUnmount() {
-    const video = this._videoRef.current;
-    video.onplay = null;
+
   }
 
   render() {
@@ -41,14 +33,9 @@ export default class VideoPlayer extends PureComponent {
 
     return (
       <div className="small-movie-card__image"
-        onMouseOver={() => setTimeout(
-            () => this.setState({isPlaying: !this.state.isPlaying}), 1000)
-        }
-        onMouseOut={() => video.load()}
       >
         <video width="280" height="175"
           ref={this._videoRef}
-          controls
           muted={isMuting}
         />
       </div>
@@ -58,8 +45,11 @@ export default class VideoPlayer extends PureComponent {
   componentDidUpdate() {
     const video = this._videoRef.current;
 
-    if (this.state.isPlaying) {
+    if (this.props.isPlaying) {
       video.play();
+    } else {
+      video.pause();
+      video.load();
     }
   }
 }

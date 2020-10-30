@@ -145,7 +145,7 @@ Main.propTypes = {
       starring: PropTypes.string.isRequired,
       runTime: PropTypes.string.isRequired,
       genre: PropTypes.string.isRequired,
-      releases: PropTypes.number.isRequired,
+      released: PropTypes.number.isRequired,
     }).isRequired,
     reviews: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,

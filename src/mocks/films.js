@@ -19,7 +19,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -63,7 +63,7 @@ export default [
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/bohemian-rhapsody.jpg`,
     imgPoster: `img/bohemian-rhapsody.jpg`,
-    genre: `Drama`,
+    genre: `Triller`,
     year: `2014`,
     overview: {
       ratingScore: 8.8,
@@ -77,8 +77,8 @@ export default [
       director: `Wes Andreson`,
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
-      genre: `Drama`,
-      releases: 2014,
+      genre: `Triller`,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -137,7 +137,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -196,7 +196,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -240,7 +240,7 @@ export default [
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/we-need-to-talk-about-kevin.jpg`,
     imgPoster: `img/bohemian-rhapsody.jpg`,
-    genre: `Drama`,
+    genre: `Comedy`,
     year: `2014`,
     overview: {
       ratingScore: 8.8,
@@ -254,8 +254,8 @@ export default [
       director: `Wes Andreson`,
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
-      genre: `Drama`,
-      releases: 2014,
+      genre: `Comedy`,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -314,7 +314,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -373,7 +373,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -432,7 +432,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,

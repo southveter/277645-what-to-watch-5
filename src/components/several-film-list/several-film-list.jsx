@@ -1,48 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-import Main from "../main/main";
-import SignIn from "../sign-in/sign-in";
-import MyList from "../my-list/my-list";
-import Film from "../film/film";
-import AddReview from "../add-review/add-review";
-import Player from "../player/player";
+import {Link} from "react-router-dom";
 
-const App = (props) => {
-  const {films} = props;
+
+const SeveralFilmList = (props) => {
+  const {films, genre} = props;
+
+  const filteredFilms = films.filter((film) => film.genre === genre).slice(0, 4);
+
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Main
-            films={films}
-          />
-        </Route>
-        <Route exact path="/login">
-          <SignIn />
-        </Route>
-        <Route exact path="/mylist">
-          <MyList />
-        </Route>
-        <Route exact path="/films/:id">
-          <Film
-            films={films}
-          />
-        </Route>
-        <Route exact path="/films/:id/review">
-          <AddReview
-            films={films}
-          />
-        </Route>
-        <Route exact path="/player/:id">
-          <Player />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
+    <div className="catalog__movies-list">
+      {filteredFilms.map((film, i) => (
+        <article key={`${i}-${film.title}`} className="small-movie-card catalog__movies-card"
+        >
+          <div className="small-movie-card__image">
+            <img src={film.imgPreview} alt={film.title} width="280" height="175" />
+          </div>
+          <h3 className="small-movie-card__title">
+            <Link className="small-movie-card__link" to="/films/:id">{film.title}</Link>
+          </h3>
+        </article>
+      ))}
+    </div>);
 };
 
-App.propTypes = {
+export default SeveralFilmList;
+
+SeveralFilmList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
@@ -72,6 +56,5 @@ App.propTypes = {
       date: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
+  genre: PropTypes.string.isRequired,
 };
-
-export default App;

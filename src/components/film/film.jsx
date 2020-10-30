@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Tabs from "../tabs/tabs";
+import SeveralFilmList from "../several-film-list/several-film-list";
 
 const Film = (props) => {
   const {films} = props;
   const film = films[0];
-  const {overview} = film;
   return (<React.Fragment>
     <section className="movie-card movie-card--full">
       <div className="movie-card__hero">
@@ -64,34 +65,7 @@ const Film = (props) => {
           </div>
 
           <div className="movie-card__desc">
-            <nav className="movie-nav movie-card__nav">
-              <ul className="movie-nav__list">
-                <li className="movie-nav__item movie-nav__item--active">
-                  <a href="#" className="movie-nav__link">Overview</a>
-                </li>
-                <li className="movie-nav__item">
-                  <a href="#" className="movie-nav__link">Details</a>
-                </li>
-                <li className="movie-nav__item">
-                  <a href="#" className="movie-nav__link">Reviews</a>
-                </li>
-              </ul>
-            </nav>
-
-            <div className="movie-rating">
-              <div className="movie-rating__score">{overview.ratingScore}</div>
-              <p className="movie-rating__meta">
-                <span className="movie-rating__level">{overview.ratingLevel}</span>
-                <span className="movie-rating__count">{overview.ratingCount} ratings</span>
-              </p>
-            </div>
-
-            <div className="movie-card__text">
-              {overview.description}
-              <p className="movie-card__director"><strong>Director: {overview.director}</strong></p>
-
-              <p className="movie-card__starring"><strong>Starring: {overview.starring}</strong></p>
-            </div>
+            <Tabs films={films}/>
           </div>
         </div>
       </div>
@@ -101,43 +75,9 @@ const Film = (props) => {
       <section className="catalog catalog--like-this">
         <h2 className="catalog__title">More like this</h2>
 
-        <div className="catalog__movies-list">
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Fantastic Beasts: The Crimes of Grindelwald</a>
-            </h3>
-          </article>
-
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Bohemian Rhapsody</a>
-            </h3>
-          </article>
-
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/macbeth.jpg" alt="Macbeth" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Macbeth</a>
-            </h3>
-          </article>
-
-          <article className="small-movie-card catalog__movies-card">
-            <div className="small-movie-card__image">
-              <img src="img/aviator.jpg" alt="Aviator" width="280" height="175" />
-            </div>
-            <h3 className="small-movie-card__title">
-              <a className="small-movie-card__link" href="movie-page.html">Aviator</a>
-            </h3>
-          </article>
-        </div>
+        <SeveralFilmList
+          films={films}
+          genre={film.genre}/>
       </section>
 
       <footer className="page-footer">
@@ -180,7 +120,7 @@ Film.propTypes = {
       starring: PropTypes.string.isRequired,
       runTime: PropTypes.string.isRequired,
       genre: PropTypes.string.isRequired,
-      releases: PropTypes.number.isRequired,
+      released: PropTypes.number.isRequired,
     }).isRequired,
     reviews: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,

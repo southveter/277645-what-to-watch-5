@@ -1,48 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-import Main from "../main/main";
-import SignIn from "../sign-in/sign-in";
-import MyList from "../my-list/my-list";
-import Film from "../film/film";
-import AddReview from "../add-review/add-review";
-import Player from "../player/player";
 
-const App = (props) => {
+const TabReview = (props) => {
   const {films} = props;
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Main
-            films={films}
-          />
-        </Route>
-        <Route exact path="/login">
-          <SignIn />
-        </Route>
-        <Route exact path="/mylist">
-          <MyList />
-        </Route>
-        <Route exact path="/films/:id">
-          <Film
-            films={films}
-          />
-        </Route>
-        <Route exact path="/films/:id/review">
-          <AddReview
-            films={films}
-          />
-        </Route>
-        <Route exact path="/player/:id">
-          <Player />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
+  const film = films[0];
+  const {reviews} = film;
+  return <div className="movie-card__reviews movie-card__row">
+    <div className="movie-card__reviews-col">
+      {reviews.map((review, i) => (
+        <div className="review" key={`${i}-${review.text}`}>
+          <blockquote className="review__quote">
+            <p className="review__text">{review.text}</p>
+
+            <footer className="review__details">
+              <cite className="review__author">{review.name}</cite>
+              <time className="review__date" dateTime={review.date}>{review.date}</time>
+            </footer>
+          </blockquote>
+
+          <div className="review__rating">{review.ratingScore}</div>
+        </div>
+      ))}
+    </div>
+  </div>;
 };
 
-App.propTypes = {
+export default TabReview;
+
+TabReview.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
@@ -73,5 +58,3 @@ App.propTypes = {
     })).isRequired,
   })).isRequired,
 };
-
-export default App;
