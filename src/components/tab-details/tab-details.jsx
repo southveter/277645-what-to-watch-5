@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const TabDetail = (props) => {
+const TabDetails = (props) => {
   const {films} = props;
   const film = films[0];
   const {details} = film;
@@ -37,9 +37,9 @@ const TabDetail = (props) => {
   </div>;
 };
 
-export default TabDetail;
+export default TabDetails;
 
-TabDetail.propTypes = {
+TabDetails.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,

@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import TabOverview from "../tab-overview/tab-overview";
-import TabDetail from "../tab-detail/tab-detail";
-import TabReview from "../tab-review/tab-review";
+import TabDetails from "../tab-details/tab-details";
+import TabReviews from "../tab-reviews/tab-reviews";
 
 class Tabs extends React.PureComponent {
   constructor(props) {
@@ -22,9 +22,9 @@ class Tabs extends React.PureComponent {
     const {films} = this.props;
     switch (tab) {
       case `Details`:
-        return <TabDetail films={films} />;
+        return <TabDetails films={films} />;
       case `Reviews`:
-        return <TabReview films={films} />;
+        return <TabReviews films={films} />;
       default:
         return <TabOverview films={films} />;
     }

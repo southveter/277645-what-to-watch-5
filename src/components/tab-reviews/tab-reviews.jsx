@@ -1,14 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const TabReview = (props) => {
+const TabReviews = (props) => {
   const {films} = props;
   const film = films[0];
   const {reviews} = film;
-  return <div className="movie-card__reviews movie-card__row">
-    <div className="movie-card__reviews-col">
-      {reviews.map((review, i) => (
-        <div className="review" key={`${i}-${review.text}`}>
+  console.log(reviews);
+
+  const renderReviews = () => {
+    const reviewsMarkup = [];
+    for (let i = 0; i < reviews.lenght; i += 3) {
+      const markup = <div className="movie-card__reviews-col" key={`${i}-${review.text}`}>
+        reviews.slice(i, i +3).map((review, i) => (
+        <div className="review">
           <blockquote className="review__quote">
             <p className="review__text">{review.text}</p>
 
@@ -20,14 +24,22 @@ const TabReview = (props) => {
 
           <div className="review__rating">{review.ratingScore}</div>
         </div>
-      ))}
-    </div>
+        </div>
+      ));
+      
+      reviewsMarkup.push(markup);
+    }
+    return reviewsMarkup;
+  }
+console.log(renderReviews())
+  return <div className="movie-card__reviews movie-card__row">
+      {renderReviews()}
   </div>;
 };
 
-export default TabReview;
+export default TabReviews;
 
-TabReview.propTypes = {
+TabReviews.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,

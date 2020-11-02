@@ -1,5 +1,6 @@
 export default [
   {
+    id: `1`,
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
@@ -59,6 +60,7 @@ export default [
     }]
   },
   {
+    id: `2`,
     title: `Bohemian Rhapsody`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/bohemian-rhapsody.jpg`,
@@ -118,6 +120,7 @@ export default [
     }]
   },
   {
+    id: `3`,
     title: `Macbeth`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/macbeth.jpg`,
@@ -177,6 +180,7 @@ export default [
     }]
   },
   {
+    id: `4`,
     title: `Aviator`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/aviator.jpg`,
@@ -236,6 +240,7 @@ export default [
     }]
   },
   {
+    id: `5`,
     title: `We need to talk about Kevin`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/we-need-to-talk-about-kevin.jpg`,
@@ -295,6 +300,7 @@ export default [
     }]
   },
   {
+    id: `6`,
     title: `What We Do in the Shadows`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/what-we-do-in-the-shadows.jpg`,
@@ -354,6 +360,7 @@ export default [
     }]
   },
   {
+    id: `7`,
     title: `Revenant`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/revenant.jpg`,
@@ -413,6 +420,7 @@ export default [
     }]
   },
   {
+    id: `8`,
     title: `Johnny English`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/johnny-english.jpg`,

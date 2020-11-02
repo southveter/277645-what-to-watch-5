@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 
 
-const SeveralFilmList = (props) => {
+const SimilarFilmList = (props) => {
   const {films, genre} = props;
 
   const filteredFilms = films.filter((film) => film.genre === genre).slice(0, 4);
@@ -24,9 +24,9 @@ const SeveralFilmList = (props) => {
     </div>);
 };
 
-export default SeveralFilmList;
+export default SimilarFilmList;
 
-SeveralFilmList.propTypes = {
+SimilarFilmList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,

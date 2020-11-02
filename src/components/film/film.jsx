@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Tabs from "../tabs/tabs";
-import SeveralFilmList from "../several-film-list/several-film-list";
+import SimilarFilmList from "../similar-film-list./similar-film-list";
 
 const Film = (props) => {
   const {films} = props;
@@ -75,7 +75,7 @@ const Film = (props) => {
       <section className="catalog catalog--like-this">
         <h2 className="catalog__title">More like this</h2>
 
-        <SeveralFilmList
+        <SimilarFilmList
           films={films}
           genre={film.genre}/>
       </section>
