@@ -4,6 +4,12 @@ import TabOverview from "../tab-overview/tab-overview";
 import TabDetails from "../tab-details/tab-details";
 import TabReviews from "../tab-reviews/tab-reviews";
 
+const TAB_NAMES = {
+  OVERVIEW: `Overview`,
+  DETAILS: `Details`,
+  REVIEWS: `Reviews`,
+};
+
 class Tabs extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -21,9 +27,9 @@ class Tabs extends React.PureComponent {
   _renderTabContent(tab) {
     const {film} = this.props;
     switch (tab) {
-      case `Details`:
+      case TAB_NAMES.DETAILS:
         return <TabDetails film={film} />;
-      case `Reviews`:
+      case TAB_NAMES.REVIEWS:
         return <TabReviews film={film} />;
       default:
         return <TabOverview film={film} />;
@@ -31,26 +37,19 @@ class Tabs extends React.PureComponent {
   }
 
   render() {
-    const TAB_NAMES = {
-      overview: `Overview`,
-      details: `Details`,
-      reviews: `Reviews`,
-    };
-
     return <React.Fragment><nav className="movie-nav movie-card__nav">
       <ul className="movie-nav__list">
-        <li className={this.state.activeTab === TAB_NAMES.overview ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`} onClick={(e) => this._handleClick(e, TAB_NAMES.overview)}>
+        <li className={this.state.activeTab === TAB_NAMES.OVERVIEW ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`} onClick={(e) => this._handleClick(e, TAB_NAMES.OVERVIEW)}>
           <a href="#" className="movie-nav__link">Overview</a>
         </li>
-        <li className={this.state.activeTab === TAB_NAMES.details ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`} onClick={(e) => this._handleClick(e, TAB_NAMES.details)}>
+        <li className={this.state.activeTab === TAB_NAMES.DETAILS ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`} onClick={(e) => this._handleClick(e, TAB_NAMES.DETAILS)}>
           <a href="#" className="movie-nav__link">Details</a>
         </li>
-        <li className={this.state.activeTab === TAB_NAMES.reviews ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`} onClick={(e) => this._handleClick(e, TAB_NAMES.reviews)}>
+        <li className={this.state.activeTab === TAB_NAMES.REVIEWS ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`} onClick={(e) => this._handleClick(e, TAB_NAMES.REVIEWS)}>
           <a href="#" className="movie-nav__link">Reviews</a>
         </li>
       </ul>
     </nav>
-
     {this._renderTabContent(this.state.activeTab)}
     </React.Fragment>;
   }

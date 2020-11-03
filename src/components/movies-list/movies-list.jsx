@@ -13,17 +13,26 @@ class MoviesList extends PureComponent {
       activeCard: null
     };
 
+    this._timerID = null;
     this._handleCardHover = this._handleCardHover.bind(this);
     this._handleCardOut = this._handleCardOut.bind(this);
 
   }
 
   _handleCardHover(film) {
-    this.setState({activeCard: film});
+    this._timerID = setTimeout(() => {
+      this.setState({activeCard: film});
+    }, 1000);
   }
 
   _handleCardOut() {
+    clearTimeout(this._timerID);
+    this._timerID = null;
     this.setState({activeCard: null});
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this._timerID);
   }
 
   render() {

@@ -27,7 +27,7 @@ const App = (props) => {
         <Route
           exact
           path="/films/:id"
-          render={(props) => <Film {...props} films={films}/>}
+          render={(routerProps) => <Film {...routerProps} films={films}/>}
         ></Route>
         <Route exact path="/films/:id/review">
           <AddReview
