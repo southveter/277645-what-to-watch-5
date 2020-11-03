@@ -14,7 +14,7 @@ class Tabs extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: `Overview`,
+      activeTab: TAB_NAMES.OVERVIEW,
     };
     this._handleClick = this._handleClick.bind(this);
   }
