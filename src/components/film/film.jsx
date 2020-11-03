@@ -5,7 +5,7 @@ import SimilarFilmList from "../similar-film-list./similar-film-list";
 
 const Film = (props) => {
   const {films} = props;
-  const film = films[0];
+  const film = films[props.match.params.id];
   return (<React.Fragment>
     <section className="movie-card movie-card--full">
       <div className="movie-card__hero">
@@ -65,7 +65,7 @@ const Film = (props) => {
           </div>
 
           <div className="movie-card__desc">
-            <Tabs films={films}/>
+            <Tabs film={film}/>
           </div>
         </div>
       </div>
@@ -129,4 +129,9 @@ Film.propTypes = {
       date: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };

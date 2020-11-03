@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const TabDetails = (props) => {
-  const {films} = props;
-  const film = films[0];
+  const {film} = props;
   const {details} = film;
 
   return <div className="movie-card__text movie-card__row">
@@ -40,7 +39,7 @@ const TabDetails = (props) => {
 export default TabDetails;
 
 TabDetails.propTypes = {
-  films: PropTypes.arrayOf(PropTypes.shape({
+  film: PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
@@ -68,5 +67,5 @@ TabDetails.propTypes = {
       name: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     })).isRequired,
-  })).isRequired,
+  }),
 };

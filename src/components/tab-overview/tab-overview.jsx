@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const TabOverview = (props) => {
-  const {films} = props;
-  const film = films[0];
+  const {film} = props;
   const {overview} = film;
 
   return <React.Fragment>
@@ -27,7 +26,7 @@ const TabOverview = (props) => {
 export default TabOverview;
 
 TabOverview.propTypes = {
-  films: PropTypes.arrayOf(PropTypes.shape({
+  film: PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
@@ -55,5 +54,5 @@ TabOverview.propTypes = {
       name: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     })).isRequired,
-  })).isRequired,
+  }),
 };

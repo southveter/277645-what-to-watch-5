@@ -19,14 +19,14 @@ class Tabs extends React.PureComponent {
   }
 
   _renderTabContent(tab) {
-    const {films} = this.props;
+    const {film} = this.props;
     switch (tab) {
       case `Details`:
-        return <TabDetails films={films} />;
+        return <TabDetails film={film} />;
       case `Reviews`:
-        return <TabReviews films={films} />;
+        return <TabReviews film={film} />;
       default:
-        return <TabOverview films={films} />;
+        return <TabOverview film={film} />;
     }
   }
 
@@ -59,7 +59,7 @@ class Tabs extends React.PureComponent {
 export default Tabs;
 
 Tabs.propTypes = {
-  films: PropTypes.arrayOf(PropTypes.shape({
+  film: PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
@@ -87,5 +87,5 @@ Tabs.propTypes = {
       name: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     })).isRequired,
-  })).isRequired,
+  }),
 };

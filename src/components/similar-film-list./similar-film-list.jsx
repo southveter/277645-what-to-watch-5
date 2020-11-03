@@ -17,7 +17,7 @@ const SimilarFilmList = (props) => {
             <img src={film.imgPreview} alt={film.title} width="280" height="175" />
           </div>
           <h3 className="small-movie-card__title">
-            <Link className="small-movie-card__link" to="/films/:id">{film.title}</Link>
+            <Link className="small-movie-card__link" to={`/films/${film.id}`}>{film.title}</Link>
           </h3>
         </article>
       ))}
