@@ -1,49 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-import Main from "../main/main";
-import SignIn from "../sign-in/sign-in";
-import MyList from "../my-list/my-list";
-import Film from "../film/film";
-import AddReview from "../add-review/add-review";
-import Player from "../player/player";
 
-const App = (props) => {
-  const {films} = props;
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Main
-            films={films}
-          />
-        </Route>
-        <Route exact path="/login">
-          <SignIn />
-        </Route>
-        <Route exact path="/mylist">
-          <MyList />
-        </Route>
-        <Route
-          exact
-          path="/films/:id"
-          render={(routerProps) => <Film {...routerProps} films={films}/>}
-        ></Route>
-        <Route exact path="/films/:id/review">
-          <AddReview
-            films={films}
-          />
-        </Route>
-        <Route exact path="/player/:id">
-          <Player />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  );
+const TabReviews = (props) => {
+  const {film} = props;
+  const {reviews} = film;
+
+  const renderReviews = () => {
+    const reviewsMarkup = [];
+    for (let i = 0; i < reviews.length; i += 3) {
+      const markup = <div className="movie-card__reviews-col" key={`${i}`}>
+        {reviews.slice(i, i + 3).map((review) => (
+          <div className="review" key={`${i}-${review.text}`}>
+            <blockquote className="review__quote">
+              <p className="review__text">{review.text}</p>
+              <footer className="review__details">
+                <cite className="review__author">{review.name}</cite>
+                <time className="review__date" dateTime={review.date}>{review.date}</time>
+              </footer>
+            </blockquote>
+            <div className="review__rating">{review.ratingScore}</div>
+          </div>))}
+      </div>;
+      reviewsMarkup.push(markup);
+    }
+    return reviewsMarkup;
+  };
+
+  return <div className="movie-card__reviews movie-card__row">
+    {renderReviews()}
+  </div>;
 };
 
-App.propTypes = {
-  films: PropTypes.arrayOf(PropTypes.shape({
+export default TabReviews;
+
+TabReviews.propTypes = {
+  film: PropTypes.shape({
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     imgPreview: PropTypes.string.isRequired,
@@ -71,7 +62,5 @@ App.propTypes = {
       name: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     })).isRequired,
-  })).isRequired,
+  }),
 };
-
-export default App;

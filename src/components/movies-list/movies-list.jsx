@@ -2,6 +2,10 @@ import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import MovieCard from "../movie-card/movie-card";
 
+import withVideoPlayer from "../../hocs/with-video-player/with-video-player";
+
+const MovieCardWrapped = withVideoPlayer(MovieCard);
+
 class MoviesList extends PureComponent {
   constructor(props) {
     super(props);
@@ -9,12 +13,26 @@ class MoviesList extends PureComponent {
       activeCard: null
     };
 
-    this.handleCardHover = this.handleCardHover.bind(this);
+    this._timerID = null;
+    this._handleCardHover = this._handleCardHover.bind(this);
+    this._handleCardOut = this._handleCardOut.bind(this);
 
   }
 
-  handleCardHover(film) {
-    this.setState({activeCard: film});
+  _handleCardHover(film) {
+    this._timerID = setTimeout(() => {
+      this.setState({activeCard: film});
+    }, 1000);
+  }
+
+  _handleCardOut() {
+    clearTimeout(this._timerID);
+    this._timerID = null;
+    this.setState({activeCard: null});
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this._timerID);
   }
 
   render() {
@@ -22,10 +40,12 @@ class MoviesList extends PureComponent {
     return (
       <div className="catalog__movies-list">
         {films.map((film, i) => (
-          <MovieCard
+          <MovieCardWrapped
             key={`${i}-${film.title}`}
             film={film}
-            handleCardHover={this.handleCardHover}
+            handleCardHover={this._handleCardHover}
+            handleCardOut={this._handleCardOut}
+            isPlaying = {this.state.activeCard === film}
           />
         ))}
       </div>
@@ -54,7 +74,7 @@ MoviesList.propTypes = {
       starring: PropTypes.string.isRequired,
       runTime: PropTypes.string.isRequired,
       genre: PropTypes.string.isRequired,
-      releases: PropTypes.number.isRequired,
+      released: PropTypes.number.isRequired,
     }).isRequired,
     reviews: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string.isRequired,

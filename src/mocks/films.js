@@ -1,5 +1,6 @@
 export default [
   {
+    id: `0`,
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
@@ -7,7 +8,7 @@ export default [
     genre: `Drama`,
     year: `2014`,
     overview: {
-      ratingScore: 8.8,
+      ratingScore: 8.0,
       ratingLevel: `Very good`,
       ratingCount: 240,
       description: `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege. Gustave prides himself on providing first-className service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`,
@@ -19,7 +20,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -59,15 +60,16 @@ export default [
     }]
   },
   {
+    id: `1`,
     title: `Bohemian Rhapsody`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/bohemian-rhapsody.jpg`,
     imgPoster: `img/bohemian-rhapsody.jpg`,
-    genre: `Drama`,
+    genre: `Triller`,
     year: `2014`,
     overview: {
-      ratingScore: 8.8,
-      ratingLevel: `Very good`,
+      ratingScore: 5.3,
+      ratingLevel: `Good`,
       ratingCount: 240,
       description: `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege. Gustave prides himself on providing first-class service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`,
       director: `Wes Andreson`,
@@ -77,8 +79,8 @@ export default [
       director: `Wes Andreson`,
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
-      genre: `Drama`,
-      releases: 2014,
+      genre: `Triller`,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -118,6 +120,7 @@ export default [
     }]
   },
   {
+    id: `2`,
     title: `Macbeth`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/macbeth.jpg`,
@@ -125,8 +128,8 @@ export default [
     genre: `Drama`,
     year: `2014`,
     overview: {
-      ratingScore: 8.8,
-      ratingLevel: `Very good`,
+      ratingScore: 9.3,
+      ratingLevel: `Nice`,
       ratingCount: 240,
       description: `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege. Gustave prides himself on providing first-class service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`,
       director: `Wes Andreson`,
@@ -137,7 +140,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -177,6 +180,7 @@ export default [
     }]
   },
   {
+    id: `3`,
     title: `Aviator`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/aviator.jpg`,
@@ -184,24 +188,24 @@ export default [
     genre: `Drama`,
     year: `2014`,
     overview: {
-      ratingScore: 8.8,
-      ratingLevel: `Very good`,
+      ratingScore: 5.0,
+      ratingLevel: `Excellent`,
       ratingCount: 240,
       description: `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege. Gustave prides himself on providing first-class service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`,
-      director: `Wes Andreson`,
+      director: `Vladimir Vetrov`,
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe and other`
     },
     details: {
-      director: `Wes Andreson`,
+      director: `Vladimir Vetrov`,
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
       ratingScore: `8,9`,
-      name: `Kate Muir`,
+      name: `Vladimir Vetrov`,
       date: `2016-12-24`,
     },
     {
@@ -236,11 +240,12 @@ export default [
     }]
   },
   {
+    id: `4`,
     title: `We need to talk about Kevin`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/we-need-to-talk-about-kevin.jpg`,
     imgPoster: `img/bohemian-rhapsody.jpg`,
-    genre: `Drama`,
+    genre: `Comedy`,
     year: `2014`,
     overview: {
       ratingScore: 8.8,
@@ -254,8 +259,8 @@ export default [
       director: `Wes Andreson`,
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
-      genre: `Drama`,
-      releases: 2014,
+      genre: `Comedy`,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -295,6 +300,7 @@ export default [
     }]
   },
   {
+    id: `5`,
     title: `What We Do in the Shadows`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/what-we-do-in-the-shadows.jpg`,
@@ -314,7 +320,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -354,6 +360,7 @@ export default [
     }]
   },
   {
+    id: `6`,
     title: `Revenant`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/revenant.jpg`,
@@ -373,7 +380,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
@@ -413,6 +420,7 @@ export default [
     }]
   },
   {
+    id: `7`,
     title: `Johnny English`,
     video: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     imgPreview: `img/johnny-english.jpg`,
@@ -432,7 +440,7 @@ export default [
       starring: `Bill Murray, Edward Norton, Jude Law, Willem Dafoe, Saoirse Ronan, Tony Revoloru, Tilda Swinton, Tom Wilkinson, Owen Wilkinson, Adrien Brody, Ralph Fiennes, Jeff Goldblum`,
       runTime: `1h 39m`,
       genre: `Drama`,
-      releases: 2014,
+      released: 2014,
     },
     reviews: [{
       text: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
