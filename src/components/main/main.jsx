@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MoviesList from "../movies-list/movies-list";
+import {connect} from "react-redux";
+import {ActionCreator} from "../../store/action";
+import GenreList from "../genre-list/genre-list";
+import {genreList} from "../../utils";
 
 const Main = (props) => {
-  const {films} = props;
+  const {films, genre, switchGenre, initialFilms} = props;
   const film = films[0];
   return (<React.Fragment>
     <section className="movie-card">
@@ -65,38 +69,11 @@ const Main = (props) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <ul className="catalog__genres-list">
-          <li className="catalog__genres-item catalog__genres-item--active">
-            <a href="#" className="catalog__genres-link">All genres</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Comedies</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Crime</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Documentary</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Dramas</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Horror</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Kids & Family</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Romance</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Sci-Fi</a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="#" className="catalog__genres-link">Thrillers</a>
-          </li>
-        </ul>
+        <GenreList
+          activeGenre={genre}
+          genres={genreList(initialFilms)}
+          onGenreClick = {switchGenre}
+        />
 
         <MoviesList
           films={films}
@@ -154,6 +131,51 @@ Main.propTypes = {
       date: PropTypes.string.isRequired,
     })).isRequired,
   })).isRequired,
+  genre: PropTypes.string.isRequired,
+  switchGenre: PropTypes.func.isRequired,
+  initialFilms: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    video: PropTypes.string.isRequired,
+    imgPreview: PropTypes.string.isRequired,
+    imgPoster: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    overview: PropTypes.shape({
+      ratingScore: PropTypes.number.isRequired,
+      ratingLevel: PropTypes.string.isRequired,
+      ratingCount: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+      director: PropTypes.string.isRequired,
+      starring: PropTypes.string.isRequired,
+    }).isRequired,
+    details: PropTypes.shape({
+      director: PropTypes.string.isRequired,
+      starring: PropTypes.string.isRequired,
+      runTime: PropTypes.string.isRequired,
+      genre: PropTypes.string.isRequired,
+      released: PropTypes.number.isRequired,
+    }).isRequired,
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      ratingScore: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+    })).isRequired,
+  })).isRequired,
 };
 
-export default Main;
+
+const mapStateToProps = (state) => ({
+  genre: state.genre,
+  films: state.filteredFilms,
+  initialFilms: state.films,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  switchGenre(genre) {
+    dispatch(ActionCreator.switchGenre(genre));
+  },
+});
+
+export {Main};
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
