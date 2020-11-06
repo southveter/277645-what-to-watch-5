@@ -7,10 +7,8 @@ import GenreList from "../genre-list/genre-list";
 import {genreList} from "../../utils";
 
 const Main = (props) => {
-  const {films, genre, switchGenre} = props;
+  const {films, genre, switchGenre, initialFilms} = props;
   const film = films[0];
-  const gen = JSON.parse(JSON.stringify(films));
-  console.log(films[0]===gen[0]);
   return (<React.Fragment>
     <section className="movie-card">
       <div className="movie-card__bg">
@@ -73,7 +71,7 @@ const Main = (props) => {
 
         <GenreList
           activeGenre={genre}
-          genres={genreList(gen)}
+          genres={genreList(initialFilms)}
           onGenreClick = {switchGenre}
         />
 
@@ -135,12 +133,42 @@ Main.propTypes = {
   })).isRequired,
   genre: PropTypes.string.isRequired,
   switchGenre: PropTypes.func.isRequired,
+  initialFilms: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    video: PropTypes.string.isRequired,
+    imgPreview: PropTypes.string.isRequired,
+    imgPoster: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    overview: PropTypes.shape({
+      ratingScore: PropTypes.number.isRequired,
+      ratingLevel: PropTypes.string.isRequired,
+      ratingCount: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+      director: PropTypes.string.isRequired,
+      starring: PropTypes.string.isRequired,
+    }).isRequired,
+    details: PropTypes.shape({
+      director: PropTypes.string.isRequired,
+      starring: PropTypes.string.isRequired,
+      runTime: PropTypes.string.isRequired,
+      genre: PropTypes.string.isRequired,
+      released: PropTypes.number.isRequired,
+    }).isRequired,
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      ratingScore: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+    })).isRequired,
+  })).isRequired,
 };
 
 
 const mapStateToProps = (state) => ({
   genre: state.genre,
   films: state.filteredFilms,
+  initialFilms: state.films,
 });
 
 const mapDispatchToProps = (dispatch) => ({
