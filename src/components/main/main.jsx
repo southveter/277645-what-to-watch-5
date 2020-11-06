@@ -9,6 +9,8 @@ import {genreList} from "../../utils";
 const Main = (props) => {
   const {films, genre, switchGenre} = props;
   const film = films[0];
+  const gen = JSON.parse(JSON.stringify(films));
+  console.log(films[0]===gen[0]);
   return (<React.Fragment>
     <section className="movie-card">
       <div className="movie-card__bg">
@@ -71,9 +73,8 @@ const Main = (props) => {
 
         <GenreList
           activeGenre={genre}
-          genres={[`All genres`, ...genreList]}
+          genres={genreList(gen)}
           onGenreClick = {switchGenre}
-
         />
 
         <MoviesList
