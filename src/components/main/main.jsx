@@ -78,10 +78,6 @@ const Main = (props) => {
         <MoviesList
           films={films}
         />
-
-        <div className="catalog__more">
-          <button className="catalog__button" type="button">Show more</button>
-        </div>
       </section>
 
       <footer className="page-footer">
