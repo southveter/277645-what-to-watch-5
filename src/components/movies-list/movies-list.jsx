@@ -1,8 +1,13 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import MovieCard from "../movie-card/movie-card";
-
+import ShowMore from "../show-more/show-more";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player";
+
+const CARD_AMOUNT = {
+  CARDS_TO_SHOW: 8,
+  LOAD_CARDS: 8,
+};
 
 const MovieCardWrapped = withVideoPlayer(MovieCard);
 
@@ -10,12 +15,18 @@ class MoviesList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      activeCard: null
+      activeCard: null,
+      itemsToShow: CARD_AMOUNT.CARDS_TO_SHOW,
     };
 
     this._timerID = null;
     this._handleCardHover = this._handleCardHover.bind(this);
     this._handleCardOut = this._handleCardOut.bind(this);
+    this._onShowMoreClick = this._onShowMoreClick.bind(this);
+  }
+
+  _onShowMoreClick() {
+    this.setState({itemsToShow: this.state.itemsToShow + CARD_AMOUNT.LOAD_CARDS});
 
   }
 
@@ -37,9 +48,9 @@ class MoviesList extends PureComponent {
 
   render() {
     const {films} = this.props;
-    return (
+    return (<React.Fragment>
       <div className="catalog__movies-list">
-        {films.map((film, i) => (
+        {films.slice(0, this.state.itemsToShow).map((film, i) => (
           <MovieCardWrapped
             key={`${i}-${film.title}`}
             film={film}
@@ -49,6 +60,11 @@ class MoviesList extends PureComponent {
           />
         ))}
       </div>
+      <ShowMore
+        onShowMoreClick={this._onShowMoreClick}
+        isShowMore={films.length > this.state.itemsToShow}
+      />
+    </React.Fragment>
     );
   }
 }
